@@ -1022,6 +1022,7 @@ pub(crate) fn codegen(
             }
 
             if config.embed_bitcode() && module.kind == ModuleKind::Regular {
+                println!("HAHA config: {:#?}", config);
                 let _timer = prof
                     .generic_activity_with_arg("LLVM_module_codegen_embed_bitcode", &*module.name);
                 let thin_bc =

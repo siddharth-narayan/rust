@@ -704,6 +704,7 @@ pub(crate) fn optimize_and_codegen_thin_module(
     tm_factory: TargetMachineFactoryFn<LlvmCodegenBackend>,
     thin_module: ThinModule<LlvmCodegenBackend>,
 ) -> CompiledModule {
+    println!("THIS IS ACTUALLY BEING OPTIMIZED_CODEGENED");
     let dcx = DiagCtxt::new(Box::new(shared_emitter.clone()));
     let dcx = dcx.handle();
 

@@ -44,7 +44,7 @@ use crate::{
 const PRE_LTO_BC_EXT: &str = "pre-lto.bc";
 
 /// What kind of object file to emit.
-#[derive(Clone, Copy, PartialEq, Encodable, Decodable)]
+#[derive(Clone, Copy, PartialEq, Encodable, Decodable, Debug)]
 pub enum EmitObj {
     // No object file.
     None,
@@ -58,7 +58,7 @@ pub enum EmitObj {
 }
 
 /// What kind of llvm bitcode section to embed in an object file.
-#[derive(Clone, Copy, PartialEq, Encodable, Decodable)]
+#[derive(Clone, Copy, PartialEq, Encodable, Decodable, Debug)]
 pub enum BitcodeSection {
     // No bitcode section.
     None,
@@ -68,7 +68,7 @@ pub enum BitcodeSection {
 }
 
 /// Module-specific configuration for `optimize_and_codegen`.
-#[derive(Encodable, Decodable)]
+#[derive(Encodable, Decodable, Debug)]
 pub struct ModuleConfig {
     /// Names of additional optimization passes to run.
     pub passes: Vec<String>,
